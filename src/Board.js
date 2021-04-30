@@ -30,6 +30,11 @@ import './Board.css';
  **/
 
 class Board extends Component {
+  static defaultProps = {
+    nrows: 5,
+    ncols: 5,
+    chanceLightStartsOn: 0.25
+  };
 
   constructor(props) {
     super(props);
@@ -76,25 +81,23 @@ class Board extends Component {
 
     // if the game is won, just show a winning msg & render nothing else
 
-    // TODO
-
-    // make table board
-    //table
-    //tbody
-    //trow
-    //-cell
-    //-cell
-    //-cell
 
     // TODO
     return (
-      <table className="Board">
-        <tbody>
-          <tr>
-            <Cell isLite={true} />
-          </tr>
-        </tbody>
-      </table>
+      <div>
+        <h1>Lights Out</h1>
+        <table className="Board">
+          <tbody>
+            <tr>
+              <Cell isLite={true} />
+              <Cell isLite={false} />
+              <Cell isLite={true} />
+              <Cell isLite={false} />
+              <Cell isLite={true} />
+            </tr>
+          </tbody>
+        </table>
+      </div>
     )
   }
 }
